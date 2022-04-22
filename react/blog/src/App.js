@@ -27,9 +27,9 @@ function App(){
       {
         글제목.map(function(글){
           return (
-            <div className="list">
+          <div className="list">
             <h3>{ 글 }
-              <span onClick={()=>{따봉변경(따봉+1)} }> 👍 </span>{따봉}
+                <span onClick={()=>{따봉변경(따봉+1)} }> 👍 </span>{따봉}
             </h3>
             <p>2월 17일 발행</p>
             <hr/>
