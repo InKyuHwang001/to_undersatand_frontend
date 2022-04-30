@@ -38,12 +38,7 @@ function App() {
           </div>
           </>
         } />
-        <Route path="/detail" element={<Detail/>} />
-        <Route path="/about" element={<About/>} >
-          <Route path="member" element={<div>멤버임</div>} />
-          <Route path="location" element={<About/>} />
-        </Route>
-        <Route path="*" element={<div>없는페이지</div>} />
+        <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
       </Routes>
 
     </div>
@@ -60,12 +55,4 @@ function Cards(props){
   )
 }
 
-function About(){
-  return(
-    <div>
-      <h4>회사정보임</h4>
-      <Outlet></Outlet>
-    </div>
-  )
-}
 export default App;
