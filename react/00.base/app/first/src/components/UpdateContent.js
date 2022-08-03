@@ -20,7 +20,6 @@ class UpdateContent extends Component{
         <form  action="/create_process" method="post"
           onSubmit={function(e){
             e.preventDefault();
-            debugger;
             this.props.onSubmit(
               this.state.id,
               this.state.title,
