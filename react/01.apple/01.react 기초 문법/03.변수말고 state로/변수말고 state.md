@@ -95,7 +95,7 @@ function App(){
 ## state에는 Array, Object 아무거나
 
 ```react
-port React, { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css'
 
 function App(){

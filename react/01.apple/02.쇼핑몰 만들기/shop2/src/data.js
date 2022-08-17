@@ -1,4 +1,4 @@
-let data=[
+let data =[
     {
       id : 0,
       title : "White and Black",
@@ -20,4 +20,4 @@ let data=[
       price : 130000
     }
   ] 
-export {data};
+export {data}; 
