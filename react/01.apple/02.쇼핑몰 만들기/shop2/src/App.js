@@ -5,8 +5,11 @@ import {useState} from "react";
 import {data} from './data.js';
 import {Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom'
 import {Detail} from './pages/Detail'
+import axios from 'axios';
+import {Cart} from './pages/Cart';
+
 function App() {
-  let [shoes]= useState(data);
+  let [shoes, setShoes]= useState(data);
   let navigate=useNavigate();
   return (
     <div className="App">
@@ -35,6 +38,15 @@ function App() {
                }
             </div>
           </div>
+          <button onClick={()=>{
+            axios.get('https://codingapple1.github.io/shop/data2.json').then((결과)=>{
+              let copy=[...shoes, ...결과.data];
+              setShoes(copy);
+            })
+            .catch(()=>{
+              console.log('실패함')
+            })
+          }}>버튼</button>
           </>
         } />
         <Route path="/event" element={<EventPage/>}>
@@ -46,8 +58,8 @@ function App() {
           <Route path="member" element={ <div>멤버들</div> } />
           <Route path="location" element={ <div>회사위치</div> } />
         </Route>
+        <Route path="/cart" element={ <Cart/> } /> 
         <Route path="*" element={<div>없는 페이지다요</div>} />
-
       </Routes>
 
     </div>
