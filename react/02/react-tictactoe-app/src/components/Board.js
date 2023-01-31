@@ -40,6 +40,11 @@ const Board = () => {
 
     const handleClick = (i)  =>  {
         const newSquares = squares.slice();
+
+        if(calculateWinner(newSquares) || squares[i]){
+            return;
+        }
+
         newSquares[i] = xIsNext ? 'X' : 'O';
         setSquares(newSquares);
         //setXIsNext(!xIsNext);
